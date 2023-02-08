@@ -3,7 +3,7 @@ package Task;
 import java.util.*;
 import java.util.stream.IntStream;
 
-public class TaskRun implements Runnable {
+public class TaskRun implements Runnable{
     @Override
     public void run() {
         Task1();
@@ -14,13 +14,12 @@ public class TaskRun implements Runnable {
         Task6();
         Task7();
         Task8();
-        Task9(IntStream.generate(() -> new Random().nextInt(50)-25).limit(50).toArray());
+        Task9(IntStream.generate(() -> new Random().nextInt(50) - 25).limit(50).toArray());
         Task10(IntStream.generate(() -> new Random().nextInt()).limit(50).toArray());
         Task11(5, '+', direction.horizontally);
         Task11(5, '+', direction.vertically);
-        Task12(IntStream.generate(() -> new Random().nextInt(50)-25).limit(10).toArray(), MaxMin.max_to_min);
-        Task12(IntStream.generate(() -> new Random().nextInt(50)-25).limit(10).toArray(),MaxMin.min_to_max);
-
+        Task12(IntStream.generate(() -> new Random().nextInt(50) - 25).limit(10).toArray(), MaxMin.max_to_min);
+        Task12(IntStream.generate(() -> new Random().nextInt(50) - 25).limit(10).toArray(), MaxMin.min_to_max);
     }
 
     public void Task1() {
@@ -236,6 +235,7 @@ public class TaskRun implements Runnable {
                 break;
         }
     }
+
     public void Task12(int[] arrays, MaxMin m) {
         System.out.println(Arrays.toString(arrays));
         Arrays.sort(arrays);
@@ -247,11 +247,11 @@ public class TaskRun implements Runnable {
                     b[j - 1] = arrays[i];
                     j = j - 1;
                 }
-                arrays=b;
+                arrays = b;
                 System.out.println(Arrays.toString(arrays));
                 break;
             case min_to_max:
-               // Arrays.sort(arrays);
+                // Arrays.sort(arrays);
                 System.out.println(Arrays.toString(arrays));
                 break;
         }
