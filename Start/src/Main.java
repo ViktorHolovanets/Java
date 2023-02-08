@@ -1,5 +1,8 @@
+import Task.TaskRun;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        TaskRun taskRun=new TaskRun();
+        taskRun.run();
     }
 }
