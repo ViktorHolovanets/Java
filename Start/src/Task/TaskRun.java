@@ -1,5 +1,8 @@
 package Task;
 
+import Task.enums.MaxMin;
+import Task.enums.direction;
+
 import java.util.*;
 import java.util.stream.IntStream;
 

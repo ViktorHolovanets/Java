@@ -1,4 +1,4 @@
-package Task;
+package Task.enums;
 
 public enum direction {
     vertically,
