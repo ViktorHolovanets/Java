@@ -254,7 +254,6 @@ public class TaskRun implements Runnable{
                 System.out.println(Arrays.toString(arrays));
                 break;
             case min_to_max:
-                // Arrays.sort(arrays);
                 System.out.println(Arrays.toString(arrays));
                 break;
         }

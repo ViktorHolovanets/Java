@@ -3,13 +3,21 @@ package OOP.Task5.services;
 import OOP.Task5.models.baseClasses.MusicInstrument;
 
 public class MusicInstrumentService {
-    public  static void ShowDevice(MusicInstrument device){
-        device.Show();
+    private MusicInstrument musicInstrument;
+
+    public MusicInstrumentService(MusicInstrument musicInstrument) {
+        this.musicInstrument = musicInstrument;
     }
-    public  static void SoundDevice(MusicInstrument device){
-        device.Sound();
+
+    public void ShowDevice() {
+        musicInstrument.Show();
     }
-    public  static void DescDevice(MusicInstrument device){
-        device.Desc();
+
+    public void SoundDevice() {
+        musicInstrument.Sound();
+    }
+
+    public void DescDevice() {
+        musicInstrument.Desc();
     }
 }

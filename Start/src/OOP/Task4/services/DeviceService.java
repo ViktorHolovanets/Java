@@ -3,13 +3,17 @@ package OOP.Task4.services;
 import OOP.Task4.models.Device;
 
 public class DeviceService {
-    public  static void ShowDevice(Device device){
+    public Device device;
+    public DeviceService(Device device){
+        this.device=device;
+    }
+    public  void ShowDevice(){
         device.Show();
     }
-    public  static void SoundDevice(Device device){
+    public void SoundDevice(){
         device.Sound();
     }
-    public  static void DescDevice(Device device){
+    public void DescDevice(){
         device.Desc();
     }
 }
