@@ -9,7 +9,7 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 public class Array implements IMath, ISort, ISearch {
-    public int[]array;
+    private int[]array;
     private   int size;
     public Array(){
 
@@ -113,5 +113,8 @@ public class Array implements IMath, ISort, ISearch {
         if(position>-1&& position<size){
             array[position]=item;
         }
+    }
+    public void show(){
+        System.out.println(Arrays.toString(array));
     }
 }
