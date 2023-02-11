@@ -49,19 +49,21 @@ public class Matrix {
     }
 
     public int Max() {
-        int[] temp =new int[sizeY];
+        int[] temp = new int[sizeY];
         for (int i = 0; i < sizeY; i++) {
-            temp[i]=Arrays.stream(array[i]).max().getAsInt();
+            temp[i] = Arrays.stream(array[i]).max().getAsInt();
         }
         return Arrays.stream(temp).max().getAsInt();
     }
+
     public int Min() {
-        int[] temp =new int[sizeY];
+        int[] temp = new int[sizeY];
         for (int i = 0; i < sizeY; i++) {
-            temp[i]=Arrays.stream(array[i]).min().getAsInt();
+            temp[i] = Arrays.stream(array[i]).min().getAsInt();
         }
         return Arrays.stream(temp).min().getAsInt();
     }
+
     public float Avg(int[] value) {
         int sum = 0;
         for (int n : value) {
@@ -69,6 +71,7 @@ public class Matrix {
         }
         return (float) sum / value.length;
     }
+
     public float Avg(float[] value) {
         int sum = 0;
         for (float n : value) {
@@ -76,7 +79,8 @@ public class Matrix {
         }
         return (float) sum / value.length;
     }
-//    public  <T> T Avg(T[] value) {
+
+    //    public  <T> T Avg(T[] value) {
 //        var sum;
 //        for (T n : value) {
 //            sum += n;
@@ -84,33 +88,36 @@ public class Matrix {
 //        return (T) sum / value.length;
 //    }
     public float Avg2D() {
-        float[] temp =new float[sizeY];
+        float[] temp = new float[sizeY];
         for (int i = 0; i < sizeY; i++) {
-            temp[i]=Avg(array[i]);
+            temp[i] = Avg(array[i]);
         }
         return Avg(temp);
     }
-    public Matrix AddMatrix(Matrix matrix){
-        if(sizeY== matrix.sizeY&&sizeX== matrix.sizeX){
+
+    public Matrix AddMatrix(Matrix matrix) {
+        if (sizeY == matrix.sizeY && sizeX == matrix.sizeX) {
             for (int i = 0; i < sizeY; i++) {
                 for (int j = 0; j < sizeX; j++) {
-                    array[i][j]+=matrix.array[i][j];
+                    array[i][j] += matrix.array[i][j];
                 }
             }
         }
         return this;
     }
-    public Matrix SubtractedMatrix(Matrix matrix){
-        if(sizeY== matrix.sizeY&&sizeX== matrix.sizeX){
+
+    public Matrix SubtractedMatrix(Matrix matrix) {
+        if (sizeY == matrix.sizeY && sizeX == matrix.sizeX) {
             for (int i = 0; i < sizeY; i++) {
                 for (int j = 0; j < sizeX; j++) {
-                    array[i][j]-=matrix.array[i][j];
+                    array[i][j] -= matrix.array[i][j];
                 }
             }
         }
         return this;
     }
-    public Matrix MultiplydMatrix(Matrix matrix){
+
+    public Matrix MultiplydMatrix(Matrix matrix) {
         int m = sizeY;
         int n = matrix.sizeX;
         int o = matrix.sizeY;
@@ -122,7 +129,7 @@ public class Matrix {
                 }
             }
         }
-        this.array=res;
-        return  this;
+        this.array = res;
+        return this;
     }
 }
