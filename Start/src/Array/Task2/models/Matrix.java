@@ -80,8 +80,8 @@ public class Matrix {
         return (float) sum / value.length;
     }
 
-    //    public  <T> T Avg(T[] value) {
-//        var sum;
+//        public  <T> T Avg(T[] value) {
+//        int sum;
 //        for (T n : value) {
 //            sum += n;
 //        }
