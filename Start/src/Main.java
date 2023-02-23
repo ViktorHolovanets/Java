@@ -21,9 +21,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 public class Main {
     public static void main(String[] args) {
-        ExecutorService executorService= Executors.newCachedThreadPool();
-        Task4 t=new Task4("","","",executorService );
-        t.run();
+
 //        Connection conn = null;
 //        try {
 //            SessionFactory sd = new Configuration().configure().buildSessionFactory();
