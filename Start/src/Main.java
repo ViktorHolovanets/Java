@@ -1,36 +1,56 @@
-import Array.Task1.models.Array;
-import Array.Task2.models.Matrix;
-import OOP.Task1.models.BaseClasses.Human;
-import OOP.Task1.models.Builder;
-import OOP_2.Task4.models.Fraction;
-import StreamApi.Task1.models.ArrayInteger;
-import ThreadAndFile.Task1.models.Task1;
-import ThreadAndFile.Task2.Task2;
-import ThreadAndFile.Task3.Task3;
-import ThreadAndFile.Task4.Task4;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
+import Hibernate.models.Book;
+import Hibernate.services.BookServices;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+
+import java.util.List;
+
+
 public class Main {
     public static void main(String[] args) {
-
-//        Connection conn = null;
+        BookServices bookServices=new BookServices();
+        bookServices.run();
+        var book = new Book();
+            book.setName("name");
+            book.setDescription("name");
+            book.setCountPage(15);
+            book.setAuthor("author");
+            book.setGenre("name");
+            book.setYear(2023);
+            book.setGenre("2023");
+        bookServices.findAll();
+//        SessionFactory sessionFactory = null;
 //        try {
-//            SessionFactory sd = new Configuration().configure().buildSessionFactory();
-//            conn = DriverManager.getConnection("jdbc:mysql://localhost:52000/mysql", "root", "mypassword");
-//            System.out.println("Ok");
-//            conn.close();
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
+//            Configuration configuration = new Configuration().configure();
+//            configuration.addAnnotatedClass(Book.class);
+//            StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
+//            sessionFactory = configuration.buildSessionFactory(builder.build());
+//
+//            Session session = sessionFactory.openSession();
+//
+//            Transaction transaction = session.beginTransaction();
+//            var book = new Book();
+//            book.setName("name1");
+//            book.setDescription("name1");
+//            book.setCountPage(15);
+//            book.setAuthor("author1");
+//            book.setGenre("name1");
+//            book.setYear(20231);
+//            book.setGenre("20231");
+//
+//            session.save(book);
+//            session.save(book);
+//            transaction.commit();
+//
+//
+//            session.close();
+//
+//        } catch (Exception e) {
+//            System.out.println("Исключение!" + e);
 //        }
-    }
 
+    }
 }
