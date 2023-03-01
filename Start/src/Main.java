@@ -1,5 +1,7 @@
 import Hibernate.models.Book;
+import Hibernate.models.Country;
 import Hibernate.services.BookServices;
+import Hibernate.services.CountryServices;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -11,9 +13,12 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        BookServices bookServices=new BookServices();
+        CountryServices bookServices=new CountryServices();
         bookServices.run();
-        bookServices.findAll();
-
+       var l= bookServices.avgPopulation(2);
+//        for (Country c:l
+//             ) {
+            System.out.println(l);
+//        }
     }
 }

@@ -50,12 +50,12 @@ public class CountryServices implements Runnable{
         return query.list();
     }
     public double avgPopulation(int id) {
-        Query query = sessionFactory.openSession().createQuery("SELECT AVG(c.population)FROM Country C inner join City c  where  C.id=:id").setParameter("id",id);
-        return (double) query.list().get(0);
+        Query query = sessionFactory.openSession().createQuery("SELECT AVG(city.population) FROM Country C inner join C.cities city  where  C.id=:id").setParameter("id",id);
+        return(double)query.list().get(0);
     }
 
     public List sameNames  () {
-        Query query = sessionFactory.openSession().createQuery("SELECT C.name,  count(c.population)FROM City C group by C.name");
+        Query query = sessionFactory.openSession().createQuery("SELECT C.name,  count(C.population)FROM City C group by C.name");
         return query.list();
     }
     public List uniqueNames  () {
