@@ -1,6 +1,8 @@
 package Hibernate.services;
 
 import Hibernate.models.Book;
+import Hibernate.models.City;
+import Hibernate.models.Country;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
