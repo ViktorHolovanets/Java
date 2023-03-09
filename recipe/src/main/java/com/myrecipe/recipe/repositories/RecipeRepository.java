@@ -16,6 +16,6 @@ public interface  RecipeRepository extends CrudRepository<Recipe, Long> {
     @Query("SELECT c.name as name FROM Category c")
     Collection<CategoryView> getCategoryName();
 
-    @Query("SELECT recipe as name FROM Category c inner join C.recipeSet recipe WHERE c.id=:category_id ORDER BY recipe.rating DESC limit 3")
+    @Query("SELECT recipe.name as name FROM Category c inner join C.recipeSet recipe WHERE c.id=:category_id ORDER BY recipe.rating DESC limit 3")
     Collection<CategoryView> getTopThreeRecipeByCategory(Long category_id);
 }
